@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1000,
+    "languages": [
+      "src/1000/1000.py"
+    ],
+    "baekjoonUrl": "https://www.acmicpc.net/problem/1000",
+    "submits": [
+      {
+        "language": "Python",
+        "filename": "src/1000/1000.py"
+      }
+    ],
+    "title": "A+B",
+    "level": 1
+  },
+  {
+    "id": 1001,
+    "languages": [
+      "src/1001/1001.py"
+    ],
+    "baekjoonUrl": "https://www.acmicpc.net/problem/1001",
+    "submits": [
+      {
+        "language": "Python",
+        "filename": "src/1001/1001.py"
+      }
+    ],
+    "title": "A-B",
+    "level": 1
+  },
+  {
+    "id": 1008,
+    "languages": [
+      "src/1008/1008.py"
+    ],
+    "baekjoonUrl": "https://www.acmicpc.net/problem/1008",
+    "submits": [
+      {
+        "language": "Python",
+        "filename": "src/1008/1008.py"
+      }
+    ],
+    "title": "A/B",
+    "level": 2
+  }
+]

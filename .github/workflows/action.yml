@@ -1,0 +1,33 @@
+name: Baekjoon
+on:
+  push:
+    branches:
+      - master
+      - main
+
+# 맨 아래 git push origin master에서 master는 자기의 기본 브랜치에 맞게 수정할 것
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Install NodeJS ${{ matrix.node-version }}"
+        uses: actions/setup-node@v1.4.5
+        with:
+          node-version: "${{ matrix.node-version }}"
+      - name: Update README.md
+        run: |
+          cd tasks
+          npm install
+          npm run start
+          git config --global user.name ${{ secrets.USERNAME }}
+          git config --global user.email ${{ secrets.EMAIL }}
+          git remote set-url origin https://x-access-token:${{ secrets.ACTION_TOKEN }}@github.com/${{ github.repository }}
+          git add ../README.md
+          git add ./data/solved.json
+          git commit -m "Update README.md"
+          git push origin master
